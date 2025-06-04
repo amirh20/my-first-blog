@@ -1,0 +1,8 @@
+{%extends 'base.html'%}
+{%block title%}{{post.title}}{%endblock%}
+
+{%block content%}
+<h2 class =" text-primary" style="font-family: 'Lobster', cursive;">{{post.title}}</h2>
+<time>published: {{post.published_date}}</time><hr>
+<p>{{post.text}}</p>
+{%endblock%}

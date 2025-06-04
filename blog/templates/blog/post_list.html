@@ -3,12 +3,12 @@
 {% block content %}
 
 <header>
-    <h1 class="container-fluid p-5 bg-primary-subtle text-white text-center"><a href="/" style="text-decoration: none;">Welcome to the Blog</a></h1>
+    <h1 class="container-fluid p-5  text-white text-center"><a href="/" style="text-decoration: none;">Welcome to the Blog</a></h1>
 </header>
 {%for post in posts %}
     <article>
-        <time>{{post.published_date}}</time> 
-        <h2><a href="" style="text-decoration: none;">{{post.title}}</a></h2>
+        <time>published: {{post.published_date}}</time> 
+        <h2><a href="{%url 'blog:post_detail' post.pk%}" style="text-decoration: none;font-family: 'Lobster', cursive;">{{post.title}}</a></h2><hr>
         <p>{{post.text|truncatewords:20}}</p>
     </article>
 {%endfor%}
