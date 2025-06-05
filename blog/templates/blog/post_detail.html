@@ -2,7 +2,14 @@
 {%block title%}{{post.title}}{%endblock%}
 
 {%block content%}
+
+{% if post.published_date %}
+            <time class="date">
+                {{ post.published_date }}
+            </time>
+{%endif%}
+
 <h2 class =" text-primary" style="font-family: 'Lobster', cursive;">{{post.title}}</h2>
-<time>published: {{post.published_date}}</time><hr>
 <p>{{post.text}}</p>
+
 {%endblock%}
